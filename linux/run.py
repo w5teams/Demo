@@ -15,14 +15,16 @@ if __name__ == '__main__':
     # 导入异步库
     import asyncio
 
+
     # 测试函数
     async def test():
-        status, result = await hello_word("W5")
-        print(status, result)
+        result = await hello_word("W5")
+        print(result)
 
 
     # 加入异步队列
     async def main(): await asyncio.gather(test())
+
 
     # 启动执行
     asyncio.run(main())
