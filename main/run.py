@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # encoding:utf-8
 from loguru import logger  # 导入日记库，没有请先安装 pip install loguru
 
@@ -11,20 +11,14 @@ async def hello_word(name):
     return {"status": 0, "result": "Hello," + name}
 
 
+# 下面代码可以用于测试使用
 if __name__ == '__main__':
-    # 导入异步库
     import asyncio
 
 
-    # 测试函数
     async def test():
         result = await hello_word("W5")
         print(result)
 
 
-    # 加入异步队列
-    async def main(): await asyncio.gather(test())
-
-
-    # 启动执行
-    asyncio.run(main())
+    asyncio.run(test())
